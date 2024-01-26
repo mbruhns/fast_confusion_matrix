@@ -111,7 +111,8 @@ def f1_score(y_true, y_pred):
         y_pred: A 1D array-like object representing the predicted labels.
 
     Returns:
-        The F1 score, which is the harmonic mean of precision and recall, providing a balanced measure of model performance.
+        The F1 score, which is the harmonic mean of precision and recall, providing a balanced measure of
+        model performance.
 
     Raises:
         None
@@ -130,7 +131,8 @@ def balanced_accuracy_score(y_true, y_pred):
         y_pred: A 1D array-like object representing the predicted labels.
 
     Returns:
-        The balanced accuracy score, which is the average of recall and specificity, providing a balanced measure of model performance.
+        The balanced accuracy score, which is the average of recall and specificity, providing a balanced measure of
+        model performance.
 
     Raises:
         None
@@ -149,7 +151,8 @@ def matthews_corrcoef(y_true, y_pred):
         y_pred: A 1D array-like object representing the predicted labels.
 
     Returns:
-        The Matthews correlation coefficient, which measures the quality of binary classification predictions, taking into account true positives, true negatives, false positives, and false negatives.
+        The Matthews correlation coefficient, which measures the quality of binary classification predictions, taking
+        into account true positives, true negatives, false positives, and false negatives.
 
     Raises:
         None
@@ -169,7 +172,8 @@ def jaccard_score(y_true, y_pred):
         y_pred: A 1D array-like object representing the predicted labels.
 
     Returns:
-        The Jaccard score, also known as the Intersection over Union (IoU), which measures the similarity between two sets by calculating the ratio of the intersection to the union of the sets.
+        The Jaccard score, also known as the Intersection over Union (IoU), which measures the similarity between two
+        sets by calculating the ratio of the intersection to the union of the sets.
 
     Raises:
         None
