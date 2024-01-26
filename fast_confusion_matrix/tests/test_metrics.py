@@ -9,12 +9,12 @@ from sklearn.metrics import balanced_accuracy_score as balanced_accuracy_score_s
 from sklearn.metrics import matthews_corrcoef as matthews_corrcoef_sklearn
 from sklearn.metrics import jaccard_score as jaccard_score_sklearn
 
-from fast_confusion_matrix.metrics import (precision_score, recall_score, accuracy, f1_score, balanced_accuracy_score,
+from fast_confusion_matrix.metrics import (precision_score, recall_score, accuracy_score, f1_score, balanced_accuracy_score,
                                            matthews_corrcoef, jaccard_score)
 
 function_lst = [(precision_score, precision_score_sklearn),
                 (recall_score, recall_score_sklearn),
-                (accuracy, accuracy_score_sklearn),
+                (accuracy_score, accuracy_score_sklearn),
                 (f1_score, f1_score_sklearn),
                 (balanced_accuracy_score, balanced_accuracy_score_sklearn),
                 (matthews_corrcoef, matthews_corrcoef_sklearn),
