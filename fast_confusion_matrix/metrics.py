@@ -2,7 +2,7 @@ import numpy as np
 from numba import njit
 
 
-@njit(parallel=True, cache=True, fastmath=True)
+@njit(parallel=True, fastmath=True)
 def calculate_confusion_matrix(y_true, y_pred):
     """Calculate the confusion matrix based on the given labels and predictions.
 
@@ -29,7 +29,7 @@ def calculate_confusion_matrix(y_true, y_pred):
     return tp, tn, fp, fn
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def precision_score(y_true, y_pred):
     """Calculate the precision score based on the given true labels and predicted labels.
 
@@ -47,7 +47,7 @@ def precision_score(y_true, y_pred):
     return tp / (tp + fp)
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def recall_score(y_true, y_pred):
     """Calculate the recall score based on the given true labels and predicted labels.
 
@@ -65,7 +65,7 @@ def recall_score(y_true, y_pred):
     return tp / (tp + fn)
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def specificity_score(y_true, y_pred):
     """Calculate the specificity score based on the given true labels and predicted labels.
 
@@ -83,7 +83,7 @@ def specificity_score(y_true, y_pred):
     return tn / (tn + fp)
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def accuracy_score(y_true, y_pred):
     """Calculate the accuracy score based on the given true labels and predicted labels.
 
@@ -102,7 +102,7 @@ def accuracy_score(y_true, y_pred):
     return (tp + tn) / total
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def f1_score(y_true, y_pred):
     """Calculate the F1 score based on the given true labels and predicted labels.
 
@@ -122,7 +122,7 @@ def f1_score(y_true, y_pred):
     return 2 * (prec * rec) / (prec + rec)
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def balanced_accuracy_score(y_true, y_pred):
     """Calculate the balanced accuracy score based on the given true labels and predicted labels.
 
@@ -142,7 +142,7 @@ def balanced_accuracy_score(y_true, y_pred):
     return (recall + specificity) / 2
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def matthews_corrcoef(y_true, y_pred):
     """Calculate the Matthews correlation coefficient based on the given true labels and predicted labels.
 
@@ -163,7 +163,7 @@ def matthews_corrcoef(y_true, y_pred):
     return numerator / denominator
 
 
-@njit(cache=True, fastmath=True)
+@njit(fastmath=True)
 def jaccard_score(y_true, y_pred):
     """Calculate the Jaccard score based on the given true labels and predicted labels.
 

@@ -14,6 +14,7 @@ from sklearn.metrics import matthews_corrcoef as matthews_corrcoef_sklearn
 from sklearn.metrics import jaccard_score as jaccard_score_sklearn
 
 from pprint import pprint
+import argparse
 
 
 def runtime_calculation(nb_func, sk_func, input_size=1_000, n_iter=50):
@@ -36,6 +37,20 @@ def runtime_calculation(nb_func, sk_func, input_size=1_000, n_iter=50):
 
 
 def main():
+    # Initialize ArgumentParser
+    parser = argparse.ArgumentParser(description="Arguments for input size and number of iterations.")
+
+    # Add arguments
+    parser.add_argument("--input_size", type=int, default=10_000, help="Size of input (default: 50_000)")
+    parser.add_argument("--n_iter", type=int, default=50, help="Number of iterations (default: 50)")
+
+    # Parse the command-line arguments
+    args = parser.parse_args()
+
+    # Access the values
+    input_size = args.input_size
+    n_iter = args.n_iter
+
     function_lst = [(precision_score, precision_score_sklearn),
                     (recall_score, recall_score_sklearn),
                     (accuracy_score, accuracy_score_sklearn),
@@ -44,16 +59,13 @@ def main():
                     (matthews_corrcoef, matthews_corrcoef_sklearn),
                     (jaccard_score, jaccard_score_sklearn)]
 
-    input_size = 10_000
-    n_iter = 50
-
     print(f"Compare runtimes for {input_size:,} elements and {n_iter} iterations.")
     speedup_dict = {}
 
     for nb_func, sk_func in function_lst:
-        nb_time, sk_time = runtime_calculation(nb_func=nb_func, sk_func=sk_func)
+        nb_time, sk_time = runtime_calculation(nb_func=nb_func, sk_func=sk_func,  input_size=input_size, n_iter=n_iter)
         speedup = sk_time / nb_time
-        speedup_dict[nb_func.py_func.__name__] = speedup
+        speedup_dict[nb_func.py_func.__name__] = np.round(speedup,2)
 
     print("Speedup results:")
     pprint(speedup_dict)
