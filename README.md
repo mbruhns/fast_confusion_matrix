@@ -1,10 +1,16 @@
+![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+![Ruff](https://img.shields.io/badge/Ruff-0.1.14-blue.svg)
+
 # fast_confusion_matrix
 
 This project provides a set of functions to calculate various metrics for **binary** classification tasks using a fast confusion matrix calculation method. The metrics calculated include precision, recall, specificity, accuracy, F1 score, balanced accuracy, Matthews correlation coefficient, and Jaccard score.
 
 ## Benchmarking results
 
+The speedups are calculated on a Apple M1 Pro as the mean over 15 runs each. You can check the speedups on your machine by simply running `benchmarking.py`. 
 
+![Speedup Plot](./speedup.png)
 
 ## Requirements
 - Numpy
@@ -14,7 +20,11 @@ This project provides a set of functions to calculate various metrics for **bina
 
 To install the project locally using pip from the `pyproject.toml` file, you can use the following steps:
 
-1. First, ensure that you have pip installed. You can check this by running `pip --version` in your terminal. If pip is not installed, you can install it by following the instructions on the [official pip installation guide](https://pip.pypa.io/en/stable/installation/).
+1. First, clone this repository
+
+```bash
+git clone git@github.com:mbruhns/fast_confusion_matrix.git
+```
 
 2. Next, navigate to the project directory:
 
@@ -37,7 +47,7 @@ Please note that you might need to use `pip3` instead of `pip` depending on your
 Import the required functions from the `metrics.py` file:
 
 ```python
-from fast_confusion_matrix.metrics import calculate_confusion_matrix, precision_score, recall_score, specificity_score, accuracy, f1_score, balanced_accuracy_score, matthews_corrcoef, jaccard_score
+from fast_confusion_matrix.metrics import precision_score
 ```
 
 You can then use these functions in your code. For example, to calculate the precision score:
@@ -46,7 +56,7 @@ You can then use these functions in your code. For example, to calculate the pre
 y_true = [1, 0, 1, 1, 0, 1]
 y_pred = [1, 0, 0, 1, 0, 1]
 precision = precision_score(y_true, y_pred)
-print(f'Precision: {precision}')
+print(f"Precision: {precision}")
 ```
 
 ## Functions
