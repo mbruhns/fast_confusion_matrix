@@ -1,4 +1,4 @@
-![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)
+![Python 3.8](https://img.shields.io/badge/python-3.9-blue.svg)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![Ruff](https://img.shields.io/badge/Ruff-0.1.14-blue.svg)
 
